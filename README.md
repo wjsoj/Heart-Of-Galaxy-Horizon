@@ -2,5 +2,5 @@
 
 项目来自：http://likexia.gitee.io/xxhx
 
-补充了汉化内容
+补充了部分汉化内容
 
