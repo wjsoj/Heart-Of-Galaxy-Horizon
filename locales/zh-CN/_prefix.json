@@ -1,0 +1,19 @@
+{
+  "[Allied] ": "[盟友] ",
+  "[Enemy] ": "[敌人] ",
+  "[Friendly] ": "[友好] ",
+  "[Neutral] ": "[中立] ",
+  "[Automatic Delivery] ": "[自动运输] ",
+  "Attack on ": "攻击 ",
+  "Raid on ": "突袭 ",
+  "ATTACKING ": "攻击中 ",
+  "Build ": "建造 ",
+  "Colonize ": "殖民 ",
+  "COMPLETED - ": "已完成 - ",
+  "Invalid number of ": "无效数量：",
+  "[Version] ": "[版本] ",
+  "Last cloud save at: ": "上次云存档时间：",
+  "Player Name: ": "玩家名：",
+  "Rank: ": "排名：",
+  "Alternative Import: ": "替代进口："
+}

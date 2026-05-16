@@ -1,0 +1,37 @@
+# Build artifacts
+node_modules/
+dist/
+.vite/
+
+# Vendored / third-party minified bundles
+core/script/jquery.min.js
+core/script/malihu/
+core/style/style.min.css
+ui/kongregate_api.js
+
+# Binary / generated
+*.min.js
+*.min.css
+
+# Assets
+img/
+ui/
+z/
+*.png
+*.jpg
+*.jpeg
+*.gif
+*.ico
+*.mp3
+*.ttf
+*.otf
+*.woff
+*.woff2
+
+# Misc
+filelist.txt
+favicon.png
+bun.lock
+bun.lockb
+package-lock.json
+pnpm-lock.yaml

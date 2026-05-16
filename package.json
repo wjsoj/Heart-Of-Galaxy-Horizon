@@ -1,0 +1,35 @@
+{
+  "name": "heart-of-galaxy-horizon",
+  "version": "0.38.0",
+  "private": true,
+  "description": "星系核心:地平线 (Heart Of Galaxy: Horizons) - 汉化与现代化重构",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build && node scripts/copy-legacy-assets.mjs",
+    "preview": "vite preview",
+    "format": "prettier --write \"**/*.{js,ts,json,css,html,md}\"",
+    "format:check": "prettier --check \"**/*.{js,ts,json,css,html,md}\"",
+    "lint": "eslint . --ext .js,.ts",
+    "lint:fix": "eslint . --ext .js,.ts --fix",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "verify-format": "node scripts/verify-ast-equiv.mjs",
+    "i18n:split": "node scripts/split-locales.mjs",
+    "i18n:scan": "node scripts/find-untranslated.mjs"
+  },
+  "devDependencies": {
+    "@types/jquery": "^3.5.30",
+    "@typescript-eslint/eslint-plugin": "^8.59.3",
+    "@typescript-eslint/parser": "^8.59.3",
+    "@vitest/coverage-v8": "^4.1.6",
+    "acorn": "^8.16.0",
+    "eslint": "^8.57.0",
+    "jsdom": "^29.1.1",
+    "prettier": "^3.3.3",
+    "typescript": "^5.6.0",
+    "vite": "^5.4.0",
+    "vitest": "^4.1.6"
+  }
+}

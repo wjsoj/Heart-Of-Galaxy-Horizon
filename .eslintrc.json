@@ -1,0 +1,100 @@
+{
+  "root": true,
+  "env": {
+    "browser": true,
+    "es2022": true,
+    "node": true,
+    "jquery": true
+  },
+  "parserOptions": {
+    "ecmaVersion": 2022,
+    "sourceType": "script"
+  },
+  "extends": ["eslint:recommended"],
+  "globals": {
+    "game": "writable",
+    "MOBILE": "writable",
+    "HORIZONS": "writable",
+    "POPULATION_ENABLED": "writable",
+    "ENERGY_ENABLED": "writable",
+    "NEW_AUTOROUTES": "writable",
+    "SHARED_RESOURCES": "writable",
+    "AG_SAVE": "writable",
+    "AG_GAME": "writable",
+    "IDLE_BONUS_ENABLED": "writable",
+    "POPUP_VERTICAL": "writable",
+    "cnItems": "writable",
+    "cnPrefix": "writable",
+    "cnPostfix": "writable",
+    "cnExcludeWhole": "writable",
+    "cnExcludePostfix": "writable",
+    "mi": "readonly",
+    "bi": "readonly",
+    "tri": "readonly",
+    "qad": "readonly"
+  },
+  "rules": {
+    "no-unused-vars": "off",
+    "no-empty": "off",
+    "no-prototype-builtins": "off",
+    "no-redeclare": "off",
+    "no-undef": "off",
+    "no-cond-assign": "off",
+    "no-fallthrough": "off",
+    "no-control-regex": "off",
+    "no-irregular-whitespace": "off",
+    "no-misleading-character-class": "off",
+    "no-useless-escape": "off",
+    "no-constant-condition": "off",
+    "no-sparse-arrays": "off",
+    "no-dupe-keys": "off",
+    "no-mixed-spaces-and-tabs": "off",
+    "for-direction": "off"
+  },
+  "overrides": [
+    {
+      "files": ["src/**/*.{ts,tsx}", "tests/**/*.{ts,tsx}", "*.d.ts"],
+      "parser": "@typescript-eslint/parser",
+      "parserOptions": {
+        "ecmaVersion": 2022,
+        "sourceType": "module"
+      },
+      "plugins": ["@typescript-eslint"],
+      "extends": ["eslint:recommended", "plugin:@typescript-eslint/recommended"],
+      "rules": {
+        "@typescript-eslint/no-explicit-any": "off",
+        "@typescript-eslint/no-unused-vars": "off",
+        "@typescript-eslint/ban-ts-comment": "off",
+        "no-unused-vars": "off"
+      }
+    },
+    {
+      "files": [
+        "tests/**/*.{js,ts}",
+        "scripts/**/*.{js,mjs}",
+        "vite.config.{js,ts}",
+        "vitest.config.{js,ts}",
+        "*.config.{js,ts,mjs}"
+      ],
+      "parserOptions": {
+        "sourceType": "module"
+      },
+      "env": {
+        "node": true,
+        "browser": false
+      }
+    }
+  ],
+  "ignorePatterns": [
+    "node_modules/",
+    "dist/",
+    ".vite/",
+    "core/script/jquery.min.js",
+    "core/script/malihu/**",
+    "ui/kongregate_api.js",
+    "img/",
+    "ui/",
+    "z/",
+    "*.min.js"
+  ]
+}
