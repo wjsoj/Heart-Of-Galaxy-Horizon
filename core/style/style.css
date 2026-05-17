@@ -1376,17 +1376,14 @@ span {
 }
 
 /* -------------------------------------------------------------------------
- * Chinese typography overrides — minimally invasive.
+ * Chinese typography override — font stack only.
  *
- * The original Xolonium font ships only Latin glyphs, so CJK characters
- * fall back to whatever the OS picks. We only append a proper CJK
- * sans-serif stack here — we deliberately do NOT touch body font-size
- * or line-height, because the legacy layout uses lots of absolutely
- * positioned panels sized to the original 1.1vw and will overflow if
- * we bump globals.
- *
- * Use `font-size-adjust` to lift CJK glyph optical size to match Latin
- * (no effect on layout boxes, only glyph metrics inside the line).
+ * The original Xolonium font ships Latin glyphs only. Append a proper
+ * CJK sans-serif stack so Chinese text picks a readable system font
+ * instead of falling back to the OS default serif (Songti). No layout
+ * properties are touched: the legacy CSS has many absolutely positioned
+ * panels sized for the original 1.1vw and will overflow if anything
+ * cascades wider.
  * ------------------------------------------------------------------------- */
 body,
 button,
@@ -1402,17 +1399,4 @@ li {
 	font-family:
 		"xolonium", "PingFang SC", "Microsoft YaHei", "Hiragino Sans GB", "Source Han Sans SC", "Noto Sans CJK SC",
 		"WenQuanYi Micro Hei", sans-serif;
-	font-size-adjust: 0.52;
-}
-
-/* Tutorial dialog text is the one place where the user explicitly noted
- * the CJK looked too small. Target the popup container only — does not
- * affect the rest of the HUD. */
-#popup_container .blue_text,
-#popup_container .white_text,
-#popup_container .green_text,
-#popup_container .orange_text,
-#popup_container .red_text {
-	font-size: 1.15em;
-	line-height: 1.55;
 }
