@@ -22,7 +22,7 @@
 
 ## 概览
 
-经典的浏览器太空 4X 游戏 *Heart Of Galaxy: Horizons* 早期以单文件压缩形式发布——一个 ~14k 行的 `sall.js` 承担了几乎所有逻辑，没有模块边界、没有构建链路、没有测试。本仓库在 **不改动核心玩法与游戏逻辑** 的硬约束下，逐步把它改造为可读、可测、可演进的现代代码库：
+经典的浏览器太空 4X 游戏 _Heart Of Galaxy: Horizons_ 早期以单文件压缩形式发布——一个 ~14k 行的 `sall.js` 承担了几乎所有逻辑，没有模块边界、没有构建链路、没有测试。本仓库在 **不改动核心玩法与游戏逻辑** 的硬约束下，逐步把它改造为可读、可测、可演进的现代代码库：
 
 - **可读** — 全部源文件经 Prettier 格式化，并通过 AST 等价工具证明语义未变。
 - **可测** — Vitest + jsdom 守护关键模块（cfg 加载、i18n 字典、工具函数）。
@@ -31,14 +31,14 @@
 
 ## 技术栈
 
-| 范畴 | 选择 |
-| --- | --- |
-| 包管理 / 运行时 | [Bun](https://bun.sh) ≥ 1.3（兼容 Node ≥ 20） |
-| 构建 | [Vite 5](https://vitejs.dev/)（MPA 模式 + 自定义中间件） |
-| 类型 | [TypeScript 5.6](https://www.typescriptlang.org/)（`allowJs` + `checkJs:false` 渐进迁移） |
-| 测试 | [Vitest 4](https://vitest.dev/) + [jsdom](https://github.com/jsdom/jsdom) |
-| 风格 | Prettier + ESLint（含 typescript-eslint） |
-| AST 工具 | [acorn](https://github.com/acornjs/acorn) — 用于证明改动语义等价 |
+| 范畴            | 选择                                                                                      |
+| --------------- | ----------------------------------------------------------------------------------------- |
+| 包管理 / 运行时 | [Bun](https://bun.sh) ≥ 1.3（兼容 Node ≥ 20）                                             |
+| 构建            | [Vite 5](https://vitejs.dev/)（MPA 模式 + 自定义中间件）                                  |
+| 类型            | [TypeScript 5.6](https://www.typescriptlang.org/)（`allowJs` + `checkJs:false` 渐进迁移） |
+| 测试            | [Vitest 4](https://vitest.dev/) + [jsdom](https://github.com/jsdom/jsdom)                 |
+| 风格            | Prettier + ESLint（含 typescript-eslint）                                                 |
+| AST 工具        | [acorn](https://github.com/acornjs/acorn) — 用于证明改动语义等价                          |
 
 ## 快速开始
 
@@ -59,18 +59,18 @@ bun run preview    # 预览构建产物
 
 ## 可用脚本
 
-| 脚本 | 说明 |
-| --- | --- |
-| `dev` | 启动 Vite 开发服务器 |
-| `build` | 生产构建 + 复制遗留静态资源 |
-| `preview` | 本地预览构建产物 |
-| `format` / `format:check` | Prettier 格式化 / 校验 |
-| `lint` / `lint:fix` | ESLint 检查 / 自动修复 |
-| `typecheck` | `tsc --noEmit` 全量类型检查 |
-| `test` / `test:watch` | Vitest 单次 / 监听模式 |
-| `verify-format` | 校验两份 JS 是否 AST 等价（重格式化安全网） |
-| `i18n:split` | 从 `zh/core.js` 抽取字典到 `locales/zh-CN/*.json` |
-| `i18n:scan` | 扫描 `sall.js` 中候选的英文 UI 字符串 |
+| 脚本                      | 说明                                              |
+| ------------------------- | ------------------------------------------------- |
+| `dev`                     | 启动 Vite 开发服务器                              |
+| `build`                   | 生产构建 + 复制遗留静态资源                       |
+| `preview`                 | 本地预览构建产物                                  |
+| `format` / `format:check` | Prettier 格式化 / 校验                            |
+| `lint` / `lint:fix`       | ESLint 检查 / 自动修复                            |
+| `typecheck`               | `tsc --noEmit` 全量类型检查                       |
+| `test` / `test:watch`     | Vitest 单次 / 监听模式                            |
+| `verify-format`           | 校验两份 JS 是否 AST 等价（重格式化安全网）       |
+| `i18n:split`              | 从 `zh/core.js` 抽取字典到 `locales/zh-CN/*.json` |
+| `i18n:scan`               | 扫描 `sall.js` 中候选的英文 UI 字符串             |
 
 ## 工程结构
 
