@@ -7,6 +7,7 @@
 // Future modules (data validation, UI overlays, settings) will hook in here.
 
 import { loadLocale } from "./i18n/loader";
+import { initTooltips } from "./ui/tooltip";
 
 async function bootstrap() {
 	try {
@@ -18,6 +19,7 @@ async function bootstrap() {
 	} catch (err) {
 		console.warn("[hog/i18n] locale load failed:", err);
 	}
+	initTooltips();
 }
 
 bootstrap();

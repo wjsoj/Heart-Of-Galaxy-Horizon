@@ -1376,6 +1376,62 @@ span {
 }
 
 /* -------------------------------------------------------------------------
+ * Sci-fi hover tooltip — matches the in-game .menu_dark popup aesthetic.
+ *
+ * Driven by `src/ui/tooltip.ts`: attaches to any element carrying a
+ * `data-tooltip` attribute. Single shared DOM node, positioned near the
+ * cursor. Visual language mirrors the legacy #popup_info: dark navy
+ * background, blue accent text, thin cyan top/bottom rules, xolonium font.
+ * ------------------------------------------------------------------------- */
+#hog-tooltip {
+	position: fixed;
+	z-index: 99999;
+	pointer-events: none;
+	opacity: 0;
+	transform: translateY(-2px);
+	transition:
+		opacity 120ms ease-out,
+		transform 120ms ease-out;
+	min-width: 64px;
+	max-width: 280px;
+	padding: 6px 12px;
+	background: linear-gradient(180deg, rgba(22, 38, 46, 0.95) 0%, rgba(14, 26, 36, 0.95) 100%);
+	border-left: 1px solid rgba(128, 192, 255, 0.55);
+	border-right: 1px solid rgba(128, 192, 255, 0.55);
+	box-shadow:
+		0 0 12px rgba(0, 128, 255, 0.25),
+		inset 0 0 0 1px rgba(128, 192, 255, 0.12);
+	font-family:
+		"xolonium", "PingFang SC", "Microsoft YaHei", "Hiragino Sans GB", "Source Han Sans SC", "Noto Sans CJK SC",
+		sans-serif;
+	color: #80c0ff;
+	font-size: 13px;
+	line-height: 1.4;
+	text-align: center;
+	white-space: nowrap;
+	letter-spacing: 0.02em;
+}
+#hog-tooltip::before,
+#hog-tooltip::after {
+	content: "";
+	position: absolute;
+	left: 8%;
+	right: 8%;
+	height: 1px;
+	background: linear-gradient(90deg, transparent 0%, rgba(128, 192, 255, 0.85) 50%, transparent 100%);
+}
+#hog-tooltip::before {
+	top: 0;
+}
+#hog-tooltip::after {
+	bottom: 0;
+}
+#hog-tooltip.visible {
+	opacity: 1;
+	transform: translateY(0);
+}
+
+/* -------------------------------------------------------------------------
  * Chinese typography override — font stack only.
  *
  * The original Xolonium font ships Latin glyphs only. Append a proper
