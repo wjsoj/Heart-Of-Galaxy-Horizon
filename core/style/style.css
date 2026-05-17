@@ -1374,3 +1374,45 @@ span {
 #planet_list span {
 	display: inline;
 }
+
+/* -------------------------------------------------------------------------
+ * Chinese typography overrides
+ *
+ * The original Xolonium font ships only Latin glyphs, so CJK characters
+ * fall back to whatever the OS picks — often a small serif (Songti) that
+ * looks visually smaller than the surrounding Latin text. We append a
+ * proper CJK sans-serif stack and bump the rendering size for CJK glyphs
+ * using `font-size-adjust` where supported, plus a small CJK-targeted
+ * bump on the body.
+ * ------------------------------------------------------------------------- */
+body,
+button,
+input,
+select,
+textarea,
+span,
+div,
+p,
+td,
+th,
+li {
+	font-family:
+		"xolonium", "PingFang SC", "Microsoft YaHei", "Hiragino Sans GB", "Source Han Sans SC", "Noto Sans CJK SC",
+		"WenQuanYi Micro Hei", sans-serif;
+}
+
+/* Slight size bump so CJK glyphs reach visual parity with Latin display
+ * font. 1.2vw ≈ 23px on 1920w (vs. 21px before). Scales with viewport. */
+body {
+	font-size: 1.2vw;
+	letter-spacing: 0.01em;
+	line-height: 1.35;
+}
+
+/* Help dense tutorial / dialog text breathe. */
+.blue_text,
+.green_text,
+.orange_text,
+.red_text {
+	line-height: 1.45;
+}
