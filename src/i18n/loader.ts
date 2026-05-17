@@ -60,14 +60,19 @@ export async function loadLocale(options: LoaderOptions = {}): Promise<LoadRepor
 
 	if (!modules) {
 		// Runtime fetch fallback (e.g. served from static hosting without bundling).
-		const manifestRes = await fetch(`/locales/${locale}/manifest.json`);
+		// Honour Vite's BASE_URL so this works under GitHub Pages project sites
+		// (`/<repo>/`) as well as root-domain deploys (`/`). Falls back to `/`
+		// in non-Vite environments (vitest, node).
+		const viteEnv = (import.meta as unknown as { env?: { BASE_URL?: string } }).env;
+		const baseUrl = (viteEnv?.BASE_URL ?? "/").replace(/\/?$/, "/");
+		const manifestRes = await fetch(`${baseUrl}locales/${locale}/manifest.json`);
 		if (!manifestRes.ok) {
 			throw new Error(`Failed to load manifest for locale ${locale}: HTTP ${manifestRes.status}`);
 		}
 		const manifest = (await manifestRes.json()) as { sections: Array<{ file: string }> };
 		modules = {};
 		for (const { file } of manifest.sections) {
-			const res = await fetch(`/locales/${locale}/${file}`);
+			const res = await fetch(`${baseUrl}locales/${locale}/${file}`);
 			if (!res.ok) continue;
 			modules[`/locales/${locale}/${file}`] = await res.json();
 		}
