@@ -58,6 +58,9 @@ export async function loadLocale(options: LoaderOptions = {}): Promise<LoadRepor
 
 	let modules = options.useBundled === false ? null : bundledLocaleFiles(locale);
 
+	// Treat empty bundled result as "not available" so we fall through to fetch.
+	if (modules && Object.keys(modules).length === 0) modules = null;
+
 	if (!modules) {
 		// Runtime fetch fallback (e.g. served from static hosting without bundling).
 		// Honour Vite's BASE_URL so this works under GitHub Pages project sites
