@@ -3,6 +3,7 @@
   "sections": [
     { "file": "settings.json", "section": "设置" },
     { "file": "tutorial.json", "section": "教程" },
+    { "file": "messages.json", "section": "动态文本/剧情消息" },
     { "file": "ships.json", "section": "飞船" },
     { "file": "market.json", "section": "贸易市场" },
     { "file": "resources.json", "section": "资源" },

@@ -23,8 +23,7 @@
   "Vitha Colony Ship": "维塔殖民船",
   "ZB-03 Small Cargo": "ZB-03小货船",
   "ZB-04 Hauler": "ZB-04搬运工",
-  "ARK-22": "方舟-22",
-  "ARK-55": "方舟-55",
+  "ARK-": "方舟-",
   "Foxar": "福克萨",
   "Sky Dragon": "天龙",
   "ZB-22 Transporter": "ZB-22运输车",
@@ -39,7 +38,6 @@
   "The Key": "钥匙",
   "Black Star": "黑星",
   "Marduk": "马尔杜克",
-  "ARK-55b": "方舟-55b",
   "ARK-PRP": "方舟-PRP",
   "No Name Ship": "无名船",
   "Angel Eyes": "天使之眼",
@@ -117,12 +115,10 @@
   "Nabonidus": "那波尼德",
   "The Heaven's Door": "天堂之门",
   "Koroleva": "考罗廖娃",
-
   "Energy Weapon": "能量武器",
   "Ballistic Weapon": "动能武器",
   "Light Emitting Weapon": "光能武器",
   "Contact Weapon": "接触武器",
-
   "Low Energy Laser": "低能激光",
   "High Energy Laser": "高能激光",
   "Resonant Light Emitter": "共振光发射器",
@@ -138,7 +134,6 @@
   "7000m Mass Accelerator": "7000 米质量加速器",
   "Fusion Powered Cannon": "聚变动力炮",
   "Antimatter Repulsor": "反物质斥力炮",
-
   "Solar Powered Engine": "太阳能引擎",
   "Methane Engine": "甲烷引擎",
   "Uranium Engine": "铀引擎",
@@ -148,17 +143,14 @@
   "Sulfur Engine": "硫磺引擎",
   "Fuel Engine": "燃料引擎",
   "Antimatter Engine": "反物质引擎",
-
   "Oil Burner Radiator": "燃油散热器",
   "Fission Radiator": "裂变散热器",
   "Biochemical Radiator": "生化散热器",
   "Sulfur Burner Radiator": "燃硫散热器",
-
   "Titanium Armor": "钛装甲",
   "Nanotubes Armor": "纳米管装甲",
   "Technetium Armor": "锝装甲",
   "Osmium Armor": "锇装甲",
-
   "25 meters Hull": "25 米船体",
   "80 meters Hull": "80 米船体",
   "80 meters Ultra-light Hull": "80 米超轻船体",
@@ -172,7 +164,6 @@
   "Heavy Technetium Hull": "重型锝船体",
   "Ultra Light Nanotubes Hull": "超轻纳米管船体",
   "Osmium Hull": "锇船体",
-
   "Capital Ship": "主力舰",
   "Assault Ship": "突击舰",
   "Servant Ship": "仆从舰",
@@ -183,7 +174,6 @@
   "Cargo Ships": "货运舰",
   "War Ships": "战舰",
   "Colonial Ships": "殖民舰",
-
   "Cargo Fleet": "运输舰队",
   "Colonial Fleet": "殖民舰队",
   "Scout Fleet": "侦察舰队",
@@ -198,7 +188,6 @@
   "Cancel Travel": "取消航行",
   "Select a fleet!": "请选择一支舰队！",
   "Fleet Y": "舰队 Y",
-
   "Attack Reports": "作战报告",
   "Unaligned Missions": "无阵营任务",
   "Use the Space Gate Alpha": "使用太空之门 Alpha",

@@ -17,5 +17,11 @@
   " from previous cluster": " 来自上个星团",
   " can only be extracted on ": " 仅能从下列地点采集：",
   " - has been attacked in ": " 已被攻击于 ",
-  " - requested by queue ": " - 由队列请求："
+  " - requested by queue ": " - 由队列请求：",
+  " has been conquered!": " 已被征服！",
+  " is in berserk!": " 进入狂暴状态！",
+  " rebelled!": " 叛乱了！",
+  " antimatter": " 反物质",
+  " dark matter": " 暗物质",
+  " Technology Points": " 科技点"
 }

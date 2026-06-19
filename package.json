@@ -17,7 +17,9 @@
     "test:watch": "vitest",
     "verify-format": "node scripts/verify-ast-equiv.mjs",
     "i18n:split": "node scripts/split-locales.mjs",
-    "i18n:scan": "node scripts/find-untranslated.mjs"
+    "i18n:scan": "node scripts/find-untranslated.mjs",
+    "i18n:scan-fragments": "node scripts/find-untranslated-fragments.mjs",
+    "i18n:normalize": "node scripts/normalize-locale-keys.mjs"
   },
   "devDependencies": {
     "@types/jquery": "^3.5.30",
