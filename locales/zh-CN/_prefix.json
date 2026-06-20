@@ -21,5 +21,20 @@
   "Miner Fleet ": "采矿舰队 ",
   "Cargo Fleet ": "运输舰队 ",
   "Scout Fleet ": "侦察舰队 ",
-  "War Fleet ": "战争舰队 "
+  "War Fleet ": "战争舰队 ",
+  "Not enough storage to load resources in ": "存储空间不足，无法将资源装入 ",
+  "No friendly fleets on ": "没有友方舰队驻扎于 ",
+  "Not enough resources in the ": "资源不足，位于 ",
+  "Fleet unloaded on ": "舰队已卸货于 ",
+  "Fleet will arrive in ": "舰队抵达倒计时：",
+  "The delivery will arrive in ": "运输抵达倒计时：",
+  "Import from ": "进口自 ",
+  "Investigate ": "调查 ",
+  "BATTLE TURN ": "战斗回合 ",
+  "HP left (%): ": "剩余生命值(%)：",
+  "Production x": "产量 x",
+  "You can change government in ": "更换政体倒计时：",
+  "Your fleet defended ": "您的舰队成功防御了 ",
+  "Switch to ": "切换到 ",
+  "Switched to ": "已切换到 "
 }
