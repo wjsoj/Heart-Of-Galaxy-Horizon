@@ -11,5 +11,22 @@
   "Environmental Sciences": "环境科学",
   "Halean Technology": "哈伦技术",
   "Artificial Intelligence": "人工智能",
-  "Hydrology": "水文学"
+  "Hydrology": "水文学",
+  "Allows construction of buildings on ocean planets": "允许在海洋星球上建造建筑",
+  "Allows construction of submerged buildings on ocean planets": "允许在海洋星球上建造水下建筑",
+  "Allows production of": "允许生产",
+  "Allows the construction of": "允许建造",
+  "Reduces dark matter warp cost of": "降低暗物质跃迁消耗：",
+  "All friendly ships": "所有友方舰船",
+  "ships. Each miner in a fleet will give +10% extraction bonus to the planet it orbits.": "舰船。舰队中每艘采矿船会为其所在星球提供 +10% 的开采加成。",
+  "biomass production +": "生物质产量 +",
+  "storage +": "存储 +",
+  "weight +": "重量 +",
+  "'s Hydrogen consumption -": "的氢气消耗 -",
+  "'s Research Points production +": "的研究点产量 +",
+  "of friendly ships -": "（友方舰船）-",
+  "of friendly ships +": "（友方舰船）+",
+  "of residential buildings +": "（住宅建筑）+",
+  "x1.3 piercing power up to": "穿透力 x1.3，最高至",
+  "x1.3 piercing power": "穿透力 x1.3"
 }

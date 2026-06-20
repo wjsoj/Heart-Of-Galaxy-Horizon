@@ -1,4 +1,6 @@
 {
   "Autoshipping will deliver 5% surplus": "自动航线盈余5%",
-  "Ignore storage on autoroutes creation": "创建自动航线时不检查容量"
+  "Ignore storage on autoroutes creation": "创建自动航线时不检查容量",
+  "Are you sure you want to wipe your data? You will lose ALL your progress!": "您确定要清除所有数据吗？您将失去全部进度！",
+  "Enable cloud save (ALPHA - export before using it!": "启用云存档 (ALPHA - 使用前请先导出!"
 }

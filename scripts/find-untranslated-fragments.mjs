@@ -184,28 +184,34 @@ for (const rel of SOURCES) {
 	// when a literal looks like that, re-parse it as JS and expand it into its own
 	// inner string literals before splitting into text fragments.
 	function expandCodeStrings(lit) {
-		if (!/\b(str\s*\+?=|return\s+str|this\.level|var\s+str)\b/.test(lit)) return [lit];
+		if (!/\b(str\s*\+?=|return\s+str|this\.level|var\s+str)\b/.test(lit)) return [{ lit, fromDesc: false }];
 		try {
-			const inner = parse(lit, { ecmaVersion: 2020, sourceType: "script" });
+			// The desc source is eval'd inside a method context at runtime, so it may
+			// use a top-level `return str;` — illegal in script mode. Wrap it in a
+			// function so acorn accepts it before we harvest the inner string literals.
+			const inner = parse(`function __desc(){${lit}}`, { ecmaVersion: 2020, sourceType: "script" });
 			const out = [];
 			(function w(n) {
 				if (!n || typeof n !== "object") return;
 				if (Array.isArray(n)) return n.forEach(w);
-				if (n.type === "Literal" && typeof n.value === "string") out.push(n.value);
+				if (n.type === "Literal" && typeof n.value === "string") out.push({ lit: n.value, fromDesc: true });
 				for (const k of Object.keys(n)) {
 					if (["type", "loc", "range", "start", "end"].includes(k)) continue;
 					w(n[k]);
 				}
 			})(inner);
-			return out.length ? out : [lit];
+			return out.length ? out : [{ lit, fromDesc: false }];
 		} catch {
-			return [lit]; // not parseable as JS — treat verbatim
+			return [{ lit, fromDesc: false }]; // not parseable as JS — treat verbatim
 		}
 	}
 
 	const expanded = literals.flatMap(expandCodeStrings);
-	for (const lit of expanded) {
-		if (!/<[a-z!/]/i.test(lit)) continue; // only literals that contain HTML markup
+	for (const { lit, fromDesc } of expanded) {
+		// Regular literals only matter when they carry HTML markup (else code/UI-id
+		// noise). Fragments expanded from an eval'd `desc` source render as-is even
+		// without tags, so plain-text ones count too.
+		if (!fromDesc && !/<[a-z!/]/i.test(lit)) continue;
 		for (const frag of htmlToTextFragments(lit)) {
 			if (!isCandidate(frag)) continue;
 			const verdict = cnItem(frag);
