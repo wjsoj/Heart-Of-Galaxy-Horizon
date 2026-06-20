@@ -12879,7 +12879,9 @@ $(document).ready(function () {
 			$("#back_button").unbind();
 			$("#back_button").click(I);
 			$("#back_button").show();
-			$("#nebula_name").show();
+			// Tech view must not show #nebula_name: it carries the galaxy-map zoom
+			// controls (set in the map view) and would overlap #bottom_build_menu.
+			$("#nebula_name").hide();
 			game.searchPlanet(currentPlanet.id) &&
 				($("#bottom_build_menu").show(),
 				5 <= game.researches[3].level
