@@ -757,4 +757,13 @@ function TransSubTextNode(node) {
 		observer.observe(targetNode, observer_config);
 	});
 	observer.observe(targetNode, observer_config);
+	// 兜底补扫：MutationObserver 偶尔会漏掉某些动态插入的节点（例如主界面
+	// 在特定时序下生成的操作按钮 “Send resources for queue” 等），导致它们
+	// 始终保持英文。这里定期对整个页面做一次幂等的补充翻译，确保动态内容
+	// 最终都会被汉化。cnItem 对已翻译文本是幂等的，故重复扫描不会破坏结果。
+	setInterval(function () {
+		observer.disconnect();
+		TransSubTextNode(targetNode);
+		observer.observe(targetNode, observer_config);
+	}, 1500);
 })();
