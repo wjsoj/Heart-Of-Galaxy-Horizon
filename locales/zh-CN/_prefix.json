@@ -16,5 +16,10 @@
   "Player Name: ": "玩家名：",
   "Rank: ": "排名：",
   "Alternative Import: ": "替代进口：",
-  "(needs ": "(需要 "
+  "(needs ": "(需要 ",
+  "Colonial Fleet ": "殖民舰队 ",
+  "Miner Fleet ": "采矿舰队 ",
+  "Cargo Fleet ": "运输舰队 ",
+  "Scout Fleet ": "侦察舰队 ",
+  "War Fleet ": "战争舰队 "
 }
