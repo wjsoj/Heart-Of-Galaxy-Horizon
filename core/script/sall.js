@@ -95,7 +95,7 @@ var repLoss = {
 		allShipres: !0,
 		hpreport: !1,
 		resourceRequest: !0,
-		autoQueue: !1,
+		autoQueue: !0,
 		useQueue: !0,
 		enemyAI: !1,
 		showqd: !0,
