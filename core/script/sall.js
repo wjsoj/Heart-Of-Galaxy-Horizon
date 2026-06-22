@@ -9107,8 +9107,38 @@ var deliveryCount = [];
 for (p = 0; p < planets.length; p++)
 	for (deliveryCount[p] = [], q = 0; q < planets.length; q++)
 		for (deliveryCount[p][q] = [], r = 0; r < resNum; r++) deliveryCount[p][q][r] = 0;
+function refreshQueueRequest(b) {
+	// Recompute b.resourcesRequest[] from the live build-queue deficit so a
+	// ledger that addRequest seeded once at enqueue time self-heals when a
+	// queued building's marginal cost later creeps above the planet's stock
+	// (e.g. a condenser whose per-unit cost scales up as copies accumulate).
+	// In-transit auto-delivery cargo (qd fleets bound for b) is subtracted so
+	// resources already on the way are never requested twice (no over-ship).
+	var need = [],
+		transit = [],
+		g,
+		h,
+		u,
+		f;
+	for (g = 0; g < resNum; g++) need[g] = transit[g] = 0;
+	for (h in b.queue)
+		if (b.queue[h]) {
+			var c = b.structure[b.queue[h].b].totalCost(b.queue[h].n);
+			for (g = 0; g < resNum; g++) need[g] += c[g];
+		}
+	for (u = 0; u < fleetSchedule.fleets.length; u++) {
+		f = fleetSchedule.fleets[u];
+		if (f && "qd" == f.type && f.destination == b.id && f.resources)
+			for (g = 0; g < resNum; g++) transit[g] += f.resources[g];
+	}
+	for (g = 0; g < resNum; g++) {
+		var def = Math.ceil(need[g]) - Math.floor(b.resources[g]) - transit[g];
+		b.resourcesRequest[g] = 0 < def ? def : 0;
+	}
+}
 function resourceRequest(b) {
 	if (!(1 > b.queue[0].n)) {
+		refreshQueueRequest(b);
 		for (var e = [], d = 0, g = 0; g < resNum; g++) ((e[g] = Math.max(b.resourcesRequest[g], 0)), (d += e[g]));
 		for (var h = [], l = 0, u = 0; u < game.planets.length; u++) {
 			var v = planets[game.planets[u]];
